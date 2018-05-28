@@ -1,6 +1,8 @@
-# lyra-web-payment
+# This is a work in progress, do not use
 
-Demonstrator Webauthn + Payment request + Payment handler
+# web-payment demonstrator
+
+Demonstrator with Webauthn + Payment request + Payment handler
 
 ## Requirement
 
