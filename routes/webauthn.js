@@ -29,7 +29,6 @@ router.post('/register', (request, response) => {
     let name     = request.body.name;
     let password = request.body.expDate;
 
-
     // if(database[username] && database[username].registered) {
     //     response.json({
     //         'status': 'failed',

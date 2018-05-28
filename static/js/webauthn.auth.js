@@ -102,6 +102,18 @@ let getGetAssertionChallenge = (formBody) => {
 //   Username is cc-number and password is exp date (testing)
 //
 
+function showPaymentSuccess() {
+    $('#header_payment').hide()
+    
+    $('#card-register-main').hide()
+    $('#success_pay').show()
+
+
+    $('#footer_success').show()
+    $('#footer_payment').hide()
+
+}
+
 $('#payment-form').submit(function (event) {
     event.preventDefault();
 
@@ -136,10 +148,8 @@ $('#payment-form').submit(function (event) {
         })
         .then((response) => {
             if (response.status === 'ok') {
-                // ajouter le back vers la page d'acceuil
                 console.log("success")
-                alert("payment successful !")
-                window.location.replace("http://localhost:8080")
+                showPaymentSuccess()
             } else {
                 console.log(`Server responed with error. The message is: ${response.message}`);
             }

@@ -42,6 +42,11 @@ $('#register').submit(function(event) {
     event.preventDefault();
 
     // window.focus()                                     // it doesn't like it
+
+    if ($('#submit-payment').is(':disabled')) {
+        return
+    }
+
     let username = this.username.value;
     let name     = this.name.value;
     let password = this.password.value;
@@ -102,6 +107,9 @@ $('#login').submit(function(event) {
     let username = this.username.value;
     let password = this.password.value;
 
+   if ($('#submit-payment').is(':disabled')) {
+        return
+    }
 
     if(!username || !password) {
         console.log('Username or password is missing!')

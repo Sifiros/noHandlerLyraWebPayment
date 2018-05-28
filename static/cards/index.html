@@ -18,31 +18,33 @@
         </header>
 
         <main>
-            <form action="" id="card-form">
-                <div class="input-fields-container">
-                    <div id="cc-number-container" class="cc-generic">
-                        <label for="cc-number">Card number *</label>
-                        <input name="number" type="text" id="cc-number" class="cc-input" />
-                    </div>
-                    <!-- end cc-number-container -->
-                    <div id="cc-expiration-date-container">
-                        <label for="cc-expiration-date">Expiration date</label>
-                        <input name="expDate" type="text" id="cc-expiration-date" class="cc-input" />
-                    </div>
-                    <div id="cc-cvv-container">
-                        <label for="cc-cvv">CVV</label>
-                        <input name="cvv" type="text" id="cc-cvv" class="cc-input" />
-                    </div>
-                </div>
-                <!-- end input-fields-container -->
+                <form action="" id="card-form">
+                    <div class="input-fields-container">
+                        <div id="cc-number-container" class="cc-generic">
+                            <label for="cc-number">Card number *</label>
+                            <input name="number" type="text" id="cc-number" class="cc-input" />
+                        </div>
+                        <!-- end cc-number-container -->
+                        <div id="cc-expiration-date-container">
+                            <label for="cc-expiration-date">Expiration date</label>
+                            <input name="expDate" type="text" id="cc-expiration-date" class="cc-input" />
+                        </div>
+                        <div id="cc-cvv-container">
+                            <label for="cc-cvv">CVV</label>
+                            <input name="cvv" type="text" id="cc-cvv" class="cc-input" />
+                        </div>
+                    <!-- end input-fields-container -->
 
-                <input id="submit-payment" type="submit" value="Register-card" class="button-primary disabled"></input>
-            </form>
+                    <input id="submit-payment" type="submit" value="Register-card" class="button-primary disabled"></input>
+                </form>
+            </div>
+          
         </main>
 
         <footer>
-            <p>
+            <p id="footer_payment">
                 <em>* We only accept MasterCard, Visa, American Express, JCB, Diners Club and Discover.</em>
+                <em>* This is a demonstrator no payment will be processed.</em>
             </p>
         </footer>
     </div>

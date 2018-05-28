@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lyra Card Enrolment</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style-card-registration.css">
+    <link rel="stylesheet/less" href="../less/animated_success.less">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700|Roboto+Mono:500" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="card-container">
+        <!-- <header>
+            <h1>Payment Successful !</h1>
+        </header> -->
+
+        <main>
+            <div id="success_pay">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                    <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"
+                    />
+                    <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10"
+                        points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                </svg>
+                <p class="success">Payment Successful !</p>
+            </div>
+
+            <div id="error_pay" style="display:none">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                    <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"
+                    />
+                    <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4"
+                        y1="37.9" x2="95.8" y2="92.3" />
+                    <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8"
+                        y1="38" x2="34.4" y2="92.2" />
+                </svg>
+                <p class="error">Bummer!</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                <em>This is a demonstrator no payment has been processed.</em>
+            </p>
+        </footer>
+    </div>
+    <!-- end card-container -->
+
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/credit-card-utils.js"></script>
+    <script src="../js/jquery.inputmask.bundle.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/webauthn.auth.js"></script>
+    <script src="../js/base64url-arraybuffer.js"></script>
+    <script src="./scripts.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js"></script>
+
+</body>
+
+</html>
