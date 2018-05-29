@@ -1,8 +1,8 @@
 {
-  "name": "Pay with Lyra",
-  "short_name": "Lyra",
+  "name": "Pay with AuthnPay",
+  "short_name": "AuthnPay",
   "icons": [{
-  	"src": "./lyra-network-300.jpg",
+  	"src": "./w3c_logo.png",
   	"sizes": "300x300",
   	"type": "image/png"
   }],

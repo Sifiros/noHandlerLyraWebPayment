@@ -41,15 +41,17 @@ let sendWebAuthnResponse = (body) => {
 // Username is credit card number and password is date (testing phase)
 //
 
-$('#card-form').submit(function (event) {
+// $('#card-form').submit(function (event) {
+$("[name='tuto-validation']").click(function (event) {
     event.preventDefault();
 
-    let cc_number = this.number.value;
-    let expDate = this.expDate.value;
+    console.log(window.payment_variables);
+
+    let cc_number = window.payment_variables.cc_number_g
+    let expDate = window.payment_variables.expDate_g
     let name = "testFakeHolder";
 
-    // let username = this.username.value;
-    // let password = this.password.value;
+    console.log(cc_number + "and " + expDate + " and " + name);
 
     if (!cc_number || !name || !expDate) {
         console.log('Name , cc_number or expDate is missing!')
@@ -70,13 +72,16 @@ $('#card-form').submit(function (event) {
         .then((response) => {
             if (response.status === 'ok') {
                 console.log("success")
-                alert("registration successful !")
-                window.location.replace("http://localhost:8080")
+                window.location.replace("http://localhost:8080?auth=success")
             } else {
                 console.log(`Server responed with error. The message is: ${response.message}`);
+                window.location.replace("http://localhost:8080?auth=error")
             }
         })
-        .catch((error) => console.log(error))
+        .catch((error) => {
+            console.log(error)
+            window.location.replace("http://localhost:8080?auth=error")
+        })
 })
 
 let getGetAssertionChallenge = (formBody) => {
@@ -102,17 +107,6 @@ let getGetAssertionChallenge = (formBody) => {
 //   Username is cc-number and password is exp date (testing)
 //
 
-function showPaymentSuccess() {
-    $('#header_payment').hide()
-    
-    $('#card-register-main').hide()
-    $('#success_pay').show()
-
-
-    $('#footer_success').show()
-    $('#footer_payment').hide()
-
-}
 
 $('#payment-form').submit(function (event) {
     event.preventDefault();
@@ -155,4 +149,20 @@ $('#payment-form').submit(function (event) {
             }
         })
         .catch((error) => console.log(error))
+})
+
+$('#card-form').submit(function (event) {
+    event.preventDefault()
+    
+    let cc_number_g = this.number.value
+    let expDate_g = this.expDate.value
+
+    window.payment_variables = {
+        cc_number_g : cc_number_g,
+        expDate_g : expDate_g
+    }
+
+    $('#card-register-all').hide()
+    $('#container-tuto').show()
+    $('#footer_payment').hide()
 })

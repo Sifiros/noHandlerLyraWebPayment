@@ -1,6 +1,19 @@
 /*
 * On Document Ready
 */
+
+function showPaymentSuccess() {
+    $('#header_payment').hide()
+    
+    $('#card-register-main').hide()
+    $('#success_pay').show()
+
+
+    $('#footer_success').show()
+    $('#footer_payment').hide()
+
+}
+
 (function ($) {
 	var number = $("#cc-number"),
 		expDate = $("#cc-expiration-date"),
