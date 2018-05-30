@@ -8,9 +8,11 @@ function showPaymentSuccess() {
     $('#card-register-main').hide()
     $('#success_pay').show()
 
-
     $('#footer_success').show()
-    $('#footer_payment').hide()
+	$('#footer_payment').hide()
+
+	$('#container-tuto').hide()
+	$('#base-container').show()
 
 }
 

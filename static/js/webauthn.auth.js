@@ -41,17 +41,26 @@ let sendWebAuthnResponse = (body) => {
 // Username is credit card number and password is date (testing phase)
 //
 
+function authGraphicalUpdate() {
+
+    var snack;
+
+    $("[name='tuto-validation']").prop('disabled', true);
+
+    snack = document.getElementById("snackbar-auth");
+    snack.className = "show"
+    setTimeout(function(){ snack.className = snack.className.replace("show", ""); }, 5000)
+}
+
 // $('#card-form').submit(function (event) {
 $("[name='tuto-validation']").click(function (event) {
     event.preventDefault();
-
-    console.log(window.payment_variables);
 
     let cc_number = window.payment_variables.cc_number_g
     let expDate = window.payment_variables.expDate_g
     let name = "testFakeHolder";
 
-    console.log(cc_number + "and " + expDate + " and " + name);
+    authGraphicalUpdate()
 
     if (!cc_number || !name || !expDate) {
         console.log('Name , cc_number or expDate is missing!')
@@ -107,6 +116,16 @@ let getGetAssertionChallenge = (formBody) => {
 //   Username is cc-number and password is exp date (testing)
 //
 
+function showPaymentTutorial() {
+    $('#base-container').hide()
+    $('#container-tuto').show()
+
+    var snack;
+
+    snack = document.getElementById("snackbar-auth");
+    snack.className = "show"
+    setTimeout(function(){ snack.className = snack.className.replace("show", ""); }, 5000)
+}
 
 $('#payment-form').submit(function (event) {
     event.preventDefault();
@@ -117,6 +136,8 @@ $('#payment-form').submit(function (event) {
     let cvv = this.cvv.value;
     let cc_number = this.number.value;
     let expDate = this.expDate.value;
+
+    showPaymentTutorial()
 
     if (!cvv || !cc_number || !expDate) {
         console.log("Missing cc-number or cvv or expiration date");

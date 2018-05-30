@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style-card-registration.css">
     <link rel="stylesheet" href="../css/misc.css">
+    <link rel="stylesheet" href="../css/snackbar-auth.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700|Roboto+Mono:500" rel="stylesheet">
 </head>
 
@@ -54,7 +55,7 @@
 
     <div class="card-container" id="container-tuto" style="display:none">
         <header>
-            <h1>How to authenticate</h1>
+            <h1>How to register</h1>
             <h2>By clicking OK, we will create your authenticator. You will have to perform your U2F gesture to do so.</h2>
             <h2>
                 If you are using chrome as a navigator, please go to chrome://flags and enable the Web Authentication API flag.
@@ -79,8 +80,11 @@
 
         </main>
 
+
     </div>
     <!-- end card-container -->
+
+    <div id="snackbar-auth">Please perform your U2F gesture</div>
 
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/credit-card-utils.js"></script>
