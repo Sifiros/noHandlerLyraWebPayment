@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     var x;
     var url_string = window.location.href
@@ -8,13 +8,13 @@ $(document).ready(function(){
     if (c === 'success') {
         x = document.getElementById("snackbar");
         x.className = "show"
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
     }
     else if (c === 'error') {
         x = document.getElementById("snackbar-error");
         x.className = 'show'
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
     }
-
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000)
 });
 
 
