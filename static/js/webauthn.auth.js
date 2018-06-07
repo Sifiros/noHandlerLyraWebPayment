@@ -169,6 +169,7 @@ $('#payment-form').submit(function (event) {
                 console.log(`Server responed with error. The message is: ${response.message}`);
             }
         })
+        // window.location.replace("http://localhost:8080?auth=error")
         .catch((error) => console.log(error))
 })
 

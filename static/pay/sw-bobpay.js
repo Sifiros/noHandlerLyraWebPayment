@@ -15,7 +15,8 @@ self.addEventListener('paymentrequest', function (e) {
   e.respondWith(payment_request_resolver.promise);
 
   // var url = "https://test-payment-handler.appspot.com/auth/authentication.html";
-  var url = "https://test-payment-handler.appspot.com/cc_auth";
+  var url = "https://localhost:8080/cc_auth";
+  // var url = "https://test-payment-handler.appspot.com/cc_auth";
 
   console.log(e.methodData);
 

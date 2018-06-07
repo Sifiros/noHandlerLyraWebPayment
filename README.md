@@ -1,6 +1,6 @@
 # This is a work in progress, do not use
 
-# web-payment demonstrator
+# WebAuthPay
 
 Demonstrator with Webauthn + Payment request + Payment handler
 
@@ -25,8 +25,6 @@ If the installed payment handler does not appear, uninstall and reinstall it.
 If it appears, select it and click the paiment button, it will probably fail the first time, just reclick on Launch Payment Request button and retry.
 
 A login page will appear. It does not works at this time.
-
-If you want to try the webauthn authentication, you can do it [here](https://test-payment-handler.appspot.com/pages/authentication.html).
 
 This project uses as basis:
 

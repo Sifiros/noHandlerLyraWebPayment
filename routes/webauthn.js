@@ -46,7 +46,6 @@ router.post('/register', (request, response) => {
         })
     }
 
-    console.log('stored password = ' + password)
     database[username] = {
         'name': name,
         'registered': false,
@@ -66,6 +65,11 @@ router.post('/register', (request, response) => {
 
 //
 //      LOGIN
+//
+
+//
+//  Note that during all process, the username is the cc-number, and the password is the date
+//  Refactoring will happen later
 //
 
 router.post('/login', (request, response) => {
@@ -91,6 +95,7 @@ router.post('/login', (request, response) => {
 
         return 
     }
+
     database[username].cvv = cvv;
 
     let getAssertion    = utils.generateServerGetAssertion(database[username].authenticators)
@@ -118,13 +123,16 @@ router.post('/response', (request, response) => {
         return
     }
 
+
     if (request.body.isLoginAuthType === true) {
 
         let password = request.body.passwordToTest;
         let username = request.body.usernameToTest;
+        
         let loginTest = passwordHandler.handleBasicAuthLogin(username, password)
         if (loginTest.status !== 'ok') {
             response.json(loginTest)
+            return
         }
     }
 
@@ -137,6 +145,8 @@ router.post('/response', (request, response) => {
             'status': 'failed',
             'message': 'Authentication error 1'
         })
+
+        return
     }
 
     /* ...and origin */
@@ -146,6 +156,7 @@ router.post('/response', (request, response) => {
             'status': 'failed',
             'message': `Authentication error 2 : ${clientData.origin} | ${config.origin}`
         })
+        return 
     }
 
     let result;
